@@ -58,7 +58,6 @@ add_library(PythonScriptingInterface SHARED
 target_link_libraries(PythonScriptingInterface
     PRIVATE
     Qt5::Core
-    PUBLIC
     ${PYTHON_LIBRARIES}
 )	
 
@@ -124,20 +123,11 @@ install(EXPORT PythonScriptingInterfaceExport
 
 # install public headers
 install(
-    FILES ${PUBLIC_HEADER}
+    FILES ${HEADER}
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/PythonScriptingInterface
     )
     
-# install ContentSet files
-install(
-    FILES ${zeraContentSetFile}
-    DESTINATION ${CMAKE_INSTALL_SYSCONFDIR}/zera/configs/
-    )
 
-install(
-    FILES ${customerContentSetFile}
-    DESTINATION /home/operator/logger-contentsets/
-    )
 
 # spawn out some info on configuration
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

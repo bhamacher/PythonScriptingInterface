@@ -57,7 +57,7 @@ void PythonBinding::init(QString p_module,QString p_path)
     Py_DECREF(m_pName);
 }
 
-const PyObject* PythonBinding::callFunction(QString p_name,QList<PyObject*> p_args)
+PyObject* PythonBinding::callFunction(QString p_name,QList<PyObject*> p_args)
 {
     int i=0;
     int argSize = p_args.size();

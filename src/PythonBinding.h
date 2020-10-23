@@ -85,7 +85,7 @@ public:
      * obj->callFunction("method2",{PyLong_FromLong(10), PyLong_FromLong(20)})
      * @endcode
      */
-    const PyObject* callFunction(QString p_name, QList<PyObject*> p_args = {}) ;
+    PyObject* callFunction(QString p_name, QList<PyObject*> p_args = {}) ;
     /**
      * @brief createObject Create an instance of class p_name defined in Python.h
      * @param p_name: name of the pyhton class
