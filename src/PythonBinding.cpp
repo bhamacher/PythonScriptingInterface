@@ -27,8 +27,9 @@ PythonBinding::~PythonBinding()
     }
 }
 
-void PythonBinding::init(QString p_module,QString p_path)
+bool PythonBinding::init(QString p_module,QString p_path)
 {
+    bool retVal=false;
     if(m_objCounter == 0){
         if(CPPFUNCMethods.size() != 0){
             PythonBinding::CPPFUNCModule = {
@@ -54,7 +55,11 @@ void PythonBinding::init(QString p_module,QString p_path)
 
     m_pName = PyUnicode_DecodeFSDefault(p_module.toUtf8());
     m_pModule = PyImport_Import(m_pName);
+    if (m_pModule !=  NULL){
+        retVal = true;
+    }
     Py_DECREF(m_pName);
+    return retVal;
 }
 
 PyObject* PythonBinding::callFunction(QString p_name,QList<PyObject*> p_args)

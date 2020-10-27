@@ -74,7 +74,7 @@ public:
      * @param p_module: Name of the module
      * @param p_path: Path to the module folder (optional)
      */
-    void init(QString p_module, QString p_path="");
+    bool init(QString p_module, QString p_path="");
     /**
      * @brief callFunction
      * @param p_name: name of the function to call
