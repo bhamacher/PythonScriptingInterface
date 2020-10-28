@@ -1,6 +1,6 @@
 include(CMakeFindDependencyMacro)
 # dependencies
-find_dependency(Qt5 COMPONENTS Core Quick REQUIRED)
+find_dependency(Qt5 COMPONENTS Core REQUIRED)
 find_dependency(PythonLibs REQUIRED)
 
 # targets file
