@@ -59,6 +59,12 @@ bool PythonBinding::init(QString p_module,QString p_path)
         retVal = true;
     }
     Py_DECREF(m_pName);
+
+
+    PyEval_InitThreads();
+    PyEval_SaveThread();
+
+
     return retVal;
 }
 
