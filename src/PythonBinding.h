@@ -12,6 +12,7 @@
 #include "pyhelper.h"
 #include "pythonobject.h"
 #include "pythondictonary.h"
+#include "pythonguard.h"
 
 
 
